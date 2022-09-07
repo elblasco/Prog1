@@ -21,11 +21,11 @@ int main(){
 
 //Inserire qui la definizione della funzione calcola_somma
 void calcola_somma(int a ,int b,int &res){
-   if(a==b){
+   if(b==a){
       res+=b;
    }
    else{
-      res+=a;
-      calcola_somma(a+1,b,res);
+      res+=b;
+      calcola_somma(a,b-1,res);
    }
 }
