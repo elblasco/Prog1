@@ -7,6 +7,7 @@ Programmi utili per esercitarsi al meglio:
 >* Se volete mantenere Windows usate [questa guida](https://code.visualstudio.com/docs/remote/wsl) per virtualizzare Ubuntu.
 >* Per scivere il codice usate [VS Code](https://code.visualstudio.com/).
 >* Per compilare il codice usate [g++](https://gcc.gnu.org/).
+>* Documentazione per C++ [qui](https://cplusplus.com/).
 >* Per controllare i memory leak usate [Valgrind](https://valgrind.org/).
 >* Se volete fare debugging del codice usate [GDB](http://www.gdbtutorial.com/.)  
 
