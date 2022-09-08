@@ -4,6 +4,7 @@ using namespace std;
 
 double fatt(int n);
 void crea_matrice(double** &m,int row, int col);
+//void dealloca_matrice(double** &m,int row);
 
 int main(){
     int row=0,col=0;
@@ -22,6 +23,13 @@ int main(){
     crea_matrice(matrix,row,col);
     cout<<"Matrice:"<<endl;
     stampa_matrice(matrix,row,col);
+    /**
+     * Vi lascio sotto la chiamata e la definizione ad una funzione
+     * per deallocare la matrice, nella soluzionbe non è presente 
+     * ma se non si chiama si verificano dei memory leak
+    **/
+    //dealloca_matrice(matrix,row);
+    return 0;
 }
 
 double fatt(int n){
@@ -42,3 +50,11 @@ void crea_matrice(double** &m,int row, int col){
         }
     }
 }
+/*
+void dealloca_matrice(double** &m,int row){
+    for(int i=0;i<row;++i){
+        delete[] m[i];
+    }
+    delete[] m;
+}
+*/
