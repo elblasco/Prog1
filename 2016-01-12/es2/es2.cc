@@ -1,9 +1,11 @@
 #include <iostream>
 using namespace std;
+
 void stampa_array(int array[], int dim);
 void somma_array(int n1[], int n2[], int risultato[], int dim);
 void somma_array_aux(int n1[], int n2[], int risultato[], int dim,int i);
 const int SIZE = 10;
+
 int main() {
    int ar1[] = {5, 9, 2, 7, 10, 15, 3, 8, 4, 12};
    int ar2[] = {6, 3, 21, 1, 17, 11, 24, 9, 8, 19};
