@@ -6,10 +6,10 @@ Programmi utili per esercitarsi al meglio:
 >* Come sistema operativo usate [Ubuntu](https://ubuntu.com/download/desktop).
 >* Se volete mantenere Windows usate [questa guida](https://code.visualstudio.com/docs/remote/wsl) per virtualizzare Ubuntu.
 >* Per scivere il codice usate [VS Code](https://code.visualstudio.com/).
->* Per compilare il codice usate [g++](https://gcc.gnu.org/).
+>* Per compilare il codice usate [g++](https://gcc.gnu.org/), per compilare consiglio di usare la stringa `g++ -Wall <eventuali_librerie.h/.cc> <nome_programma.cc>`.
 >* Documentazione per C++ [qui](https://cplusplus.com/).
 >* Per controllare i memory leak usate [Valgrind](https://valgrind.org/).
 >* Se volete fare debugging del codice usate [GDB](http://www.gdbtutorial.com/.)  
 
 Lo so l'elenco è lungo, ma gli ultimi due punti non sono obbliggatori.  
-L'uso di g++/gcc vi sarà più chiaro al corso di calcolatori il secondo semstre.
+L'uso di g++/gcc vi sarà più chiaro al corso di calcolatori il secondo semestre.

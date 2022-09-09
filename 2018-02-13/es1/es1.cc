@@ -42,7 +42,7 @@ bool corretta(char* mail){
       }
    }
    if(atCounter>1){
-      cout<<"TRoppe chiocciole\n";
+      cout<<"Troppe chiocciole\n";
       ok=false;
    }
    return ok;

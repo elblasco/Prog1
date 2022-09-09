@@ -29,7 +29,7 @@ void reverse_array(char* input,int len){
    if(len==0){
       return;
    }
-   else if(is_vocale(input[len-1])&&is_vocale(input[0])){
+   else if(is_vocale(input[len-1]) && is_vocale(input[0])){
       input[len-1]=SEGNAPOSTO;
       input[0]=SEGNAPOSTO;
    }

@@ -4,7 +4,7 @@
 using namespace std;
 
 const int DIM_PAROLA = 50 + 1;
-const char* PAROLA_STOP = "STOP";
+const char* STOP = "STOP";
 
 int main(int argc, char* argv[]){
    if(argc!=3){
@@ -18,25 +18,36 @@ int main(int argc, char* argv[]){
          cerr<<"Errore di file\n";
       }
       else{
-         char ** file=new char*[DIM_PAROLA];
-         char tmp[DIM_PAROLA];
          int lunghezza=0;
-         input>>tmp;
-         while(strcmp(tmp,PAROLA_STOP)!=0 || input.eof()){
-            file[lunghezza]=new char[strlen(tmp)];
-            strcpy(file[lunghezza],tmp);
+         char tmp_buffer[DIM_PAROLA];
+         input>>tmp_buffer;
+
+         while ((!input.eof()) && (strcmp(tmp_buffer,STOP)!=0)){
             lunghezza++;
-            input>>tmp;
+            input>>tmp_buffer;
          }
+         
+         input.close();
+         input.open(argv[1],ios::in);
+         char ** file=new char*[lunghezza];
+
+         for(int i=0;i<lunghezza;++i){
+            file[i]=new char[50];
+            input>>file[i];
+         }
+
          for(int i=lunghezza-1;i>=0;--i){
             output<<file[i]<<" ";
+            cout<<file[i]<<" ";
          }
+
          for(int i=lunghezza-1;i>=0;--i){
             delete[] file[i];
          }
+         
          delete[] file;
+         input.close();
       }
-      input.close();
       output.close();
    }
    return 0;

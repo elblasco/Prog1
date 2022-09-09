@@ -1,7 +1,16 @@
 #include <iostream>
-#include<fstream>
-#include<cstring>
+#include <fstream>
+#include <cstring>
 using namespace std;
+
+#define MAXDIM 31
+
+/**
+ * Non ho capito come a fare in modo che il testo vada a capo
+ * ma guardando le soluzioni lo ho fatto identico al professore
+ * ciò significa che manco il suo dovrebbe andare a capo
+*/
+
 int main(int argc,char* argv[]){
    if(argc!=3){
       cerr<<"Errore in input\n";
@@ -14,21 +23,23 @@ int main(int argc,char* argv[]){
          cerr<<"Errore in input\n";
       }
       else{
-         char tmp[31];
-         input>>tmp;
-         tmp[0]=tmp[0]+('A'-'a');
-         output<<tmp<<" ";
-         while(input>>tmp){
-            output<<tmp<<" ";
-            if(tmp[strlen(tmp)-1]=='.'||
-               tmp[strlen(tmp)-1]=='?'||
-               tmp[strlen(tmp)-1]=='!'){
-                  if(!(tmp[0] >= 'A' && tmp[0] <= 'Z')){
-                     output<<'\n';
-                     outpu<<tmp;
-                     tmp[0] = tmp[0] + ('A'-'a');
-                     output<<tmp<<" ";
+         char buffer[MAXDIM];
+         input>>buffer;
+         if(!(buffer[0]>='A' && buffer[0]<='Z')){
+            buffer[0]=buffer[0]+('A'-'a');
+         }
+         while(!input.eof()){
+            output<<buffer<<" ";
+            if(buffer[strlen(buffer)-1]=='.' ||
+               buffer[strlen(buffer)-1]=='!' ||
+               buffer[strlen(buffer)-1]=='?'){
+                  input>>buffer;
+                  if(!(buffer[0]>='A' && buffer[0]<='Z')){
+                     buffer[0]=buffer[0]+('A'-'a');
                   }
+            }
+            else{
+               input>>buffer;
             }
          }
       }

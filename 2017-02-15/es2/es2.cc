@@ -1,8 +1,10 @@
 #include <iostream>
 using namespace std;
 // Inserire qui sotto la dichiarazione della funzione
+
+//int* crea_vettore_aux(int n,int* v, int i);
 int* crea_vettore(int n);
-int* crea_vettore_aux(int n, int* v, int i);
+void crea_vettore_aux(int n,int* &v,int i);
 
 int main(){
    int N;
@@ -22,10 +24,11 @@ int main(){
 }
 // Inserire qui sotto la definizione della funzione crea_vettore
 
-int* crea_vettore(int n){
+/*int* crea_vettore(int n){
    int *v=new int[n];
    return crea_vettore_aux(n,v,0);
 }
+
 int* crea_vettore_aux(int n, int* v,int i){
    if(i==n){
       return v;
@@ -33,5 +36,21 @@ int* crea_vettore_aux(int n, int* v,int i){
    else{
       v[i]=i*i;
       crea_vettore_aux(n,v,++i);
+   }
+}*/
+
+int* crea_vettore(int n){
+   int* v;
+   crea_vettore_aux(n,v,0);
+   return v;
+}
+
+void crea_vettore_aux(int n,int* &v,int i){
+   if(i==n+1){
+      v=new int[n+1];
+   }
+   else{
+      crea_vettore_aux(n,v,i+1);
+      v[i]=i*i;
    }
 }

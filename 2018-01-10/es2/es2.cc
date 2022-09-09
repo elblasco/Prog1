@@ -19,8 +19,6 @@ int somma_prodotto_aux(int* v1,int* v2,int dim,int i){
       return 0;
    }
    else{
-      cout<<"dim= "<<dim;
-      cout<<"i= "<<i;
       return (v1[i]*v2[dim])+somma_prodotto_aux(v1,v2,dim=dim-1,i=i+1);
    }
 }
