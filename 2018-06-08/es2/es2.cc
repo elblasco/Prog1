@@ -2,7 +2,8 @@ using namespace std;
 #include <iostream>
 // Inserire qui sotto la dichiarazione della funzione shift
 int* shift(int* v, int n,int j);
-int* aux(int* v, int n,int j,int i,int* a);
+void aux(int* v, int n,int j,int i,int* &a);
+
 int main(){
    int J = 0;
    const int N = 15;
@@ -23,21 +24,23 @@ int main(){
    delete[] new_vect;
    return 0;
 }
+
 // Inserire qui sotto la definizione della funzione shift
 int* shift(int* v, int n,int j){
    int* array=new int[n];
-   return aux(v,n,j,0,array);
+   aux(v,n,j,0,array);
+   return array;
 }
-int* aux(int* v, int n,int j,int i,int* a){
+void aux(int* v, int n,int j,int i,int* &a){
    if(i>=n){
-      return a;
+      a=new int[n];
    }
    else if(i+j<n){
-      a[i]=v[i+j];
       aux(v,n,j,i+1,a);
+      a[i]=v[i+j];
    }
    else{
-      a[i]=0;
       aux(v,n,j,i+1,a);
+      a[i]=0;
    }
 }
