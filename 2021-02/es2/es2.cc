@@ -55,6 +55,10 @@ void get_elements_aux(char *s,int dimS,char * &d1,int &dimD1,char * &d2,int &dim
    if(i>=dimS){
       d1=new char[dimD1];
       d2=new char[dimD2];
+      d1[dimD1] = '\0';
+      d2[dimD2] = '\0';
+      dimD1++;
+      dimD2++
    }
    else if(s[i]>='a' && s[i]<='z'){
       int p=dimD1++;
@@ -63,7 +67,7 @@ void get_elements_aux(char *s,int dimS,char * &d1,int &dimD1,char * &d2,int &dim
 
    }
    else if(s[i]>='0' && s[i]<='9'){
-      int p=dimD1++;
+      int p=dimD2++;
       get_elements_aux(s,dimS,d1,dimD1,d2,dimD2,i+1);
       d2[p]='9'-(s[i]-'0');
    }
